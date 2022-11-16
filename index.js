@@ -1,16 +1,26 @@
 const  DOMSelectors  = {
     button: document.getElementById("btn"),
-    GameName: document.getElementById("GameName"),
-    GameGenre: document.getElementById("GameGenre"),
+    title: document.getElementById("title"),
+    artist: document.getElementById("artist"),
     url: document.getElementById("url"),
     form: document.getElementById("form"),
-    display: document.getElementById("display")
+    display: document.getElementById("display"),)
 };
-DOMSelectors.form.addEventListener("submit", function(){
-    let input = DOMSelectors.input.value
-    DOMSelectors.form.insertAdjacentElement("afterend", `${input}`)
-}),
+DOMSelectors.form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    output();
+});
+function output(){
+   DOMSelectors.display.insertAdjacentHTML("afterend",
+    `<div class="display-card">
+    <img class="display-img" src="${DOMSelectors.url.value}" /><img>
+    <h2 class="display-artist">${DOMSelectors.artist.value}</h2>
+    <h3 class="display-album">${DOMSelectors.title.value}</h3>
+     <button class="remove btn">Remove Album</button>
+</div>`
+);
+}
 
-<div class="display card">
-
-</div> 
+DOMSelectors.button.addEventListener("click", function(){
+    element.remove();
+})
