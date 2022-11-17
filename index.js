@@ -4,7 +4,7 @@ const  DOMSelectors  = {
     artist: document.getElementById("artist"),
     url: document.getElementById("url"),
     form: document.getElementById("form"),
-    display: document.getElementById("display"),)
+    display: document.getElementById("display"),
 };
 DOMSelectors.form.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -21,6 +21,5 @@ function output(){
 );
 }
 
-DOMSelectors.button.addEventListener("click", function(){
-    element.remove();
-})
+//const array = [document.querySelectorAll(${DOMSelectors.btn.value})]
+//array.forEach(element => console.log(element))
