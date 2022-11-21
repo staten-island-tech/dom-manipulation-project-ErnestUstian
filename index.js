@@ -9,6 +9,7 @@ const DOMSelectors = {
 DOMSelectors.form.addEventListener("submit", function (event) {
   event.preventDefault();
   output();
+
 });
 function output() {
   DOMSelectors.display.insertAdjacentHTML(
@@ -17,7 +18,17 @@ function output() {
     <img class="display-img" src="${DOMSelectors.url.value}" /><img>
     <h2 class="display-artist">${DOMSelectors.artist.value}</h2>
     <h3 class="display-album">${DOMSelectors.title.value}</h3>
-     <button class="remove btn">Remove Album</button>
+     <button class="remove btn" id="btn" >Remove Album</button>
 </div>`
+
   );
+  card()
+}
+function card(){
+    let remove = document.querySelectorAll(".remove");
+    remove.forEach((el) => {
+        el.addEventListener("click", function (el) {
+            this.parentElement.remove();
+        });
+    });
 }
